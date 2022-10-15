@@ -1,0 +1,50 @@
+.inputContainer {
+  width: 100%;
+  background-color: #1a1a1a;
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.inputContainerHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputLabel {
+  padding: 6px 0px 10px;
+  font-size: 16px;
+  color: #9f9f9f;
+}
+
+.inputError {
+  padding: 6px 0px 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #ff0000;
+}
+
+input {
+  color: white;
+  outline: none;
+  border: none;
+  background-color: inherit;
+  padding: 0;
+}
+
+mat-icon {
+  color: white;
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+}
+
+li {
+  color: #FFF;
+}

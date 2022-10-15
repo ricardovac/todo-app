@@ -1,0 +1,18 @@
+<form>
+  <div class="inputContainer">
+    <div class="inputContainerHeader">
+      <div class="inputLabel">
+        <label for="">Tarefas</label>
+      </div>
+      <div class="inputAdd">
+        <mat-icon (click)="add(task.value)">add</mat-icon>
+      </div>
+    </div>
+    <input name="tarefa" type="text" id="tarefa" placeholder="Add your new todo" #task>
+  </div>
+</form>
+
+<ul *ngFor="let item of list">
+  <li>{{ item.name }}</li>
+  <mat-icon class="removeButton" (click)="removeTask(item.id)">remove_circle_outline</mat-icon>
+</ul>
