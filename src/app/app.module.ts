@@ -9,6 +9,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './components/home/home.component';
 import { InputsComponent } from './components/inputs/inputs.component';
 import { FormsModule } from '@angular/forms';
+import { NotifierModule } from 'angular-notifier';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    NotifierModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

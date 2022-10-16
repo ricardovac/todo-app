@@ -5,14 +5,40 @@
         <label for="">Tarefas</label>
       </div>
       <div class="inputAdd">
-        <mat-icon (click)="add(task.value)">add</mat-icon>
+        <button mat-button (click)="add(hr, task)">
+          <mat-icon>add</mat-icon>
+        </button>
       </div>
     </div>
-    <input name="tarefa" type="text" id="tarefa" placeholder="Add your new todo" #task>
+    <input type="text" value="Limpar a casa" id="tarefa" placeholder="Add your new todo" #task required>
+    <hr #hr />
+
+    <ul *ngFor="let item of list">
+      <div class="checkBoxContainer">
+        <mat-checkbox [(ngModel)]="check" name="checkbox" class="checkBox" (click)="setCheck(li)"></mat-checkbox >
+        <li #li>{{ item.name }}</li>
+      </div>
+
+      <div class="buttonsContainer">
+        <button (click)="removeTask(hr, item.id)" mat-mini-fab color="warn" class="removeButton">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+        <button (click)="editTask()" mat-mini-fab color="success" class="editButton">
+          <mat-icon class="editButton">edit</mat-icon>
+        </button>
+      </div>
+
+    </ul>
+
+    <div class="clearContainer" #clear>
+      <div class="clearLabel">
+        <label #label for="">Você tem {{ this.list.length }} tarefa(s) pendente</label>
+      </div>
+      <div class="clearButton">
+        <button mat-button (click)="clearTasks(hr)">Limpar</button>
+      </div>
+    </div>
+
   </div>
 </form>
-
-<ul *ngFor="let item of list">
-  <li>{{ item.name }}</li>
-  <mat-icon class="removeButton" (click)="removeTask(item.id)">remove_circle_outline</mat-icon>
-</ul>

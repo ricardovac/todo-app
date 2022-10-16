@@ -38,6 +38,7 @@ mat-icon {
 
 ul {
   display: flex;
+  align-items: center;
   flex-direction: row;
   justify-content: space-between;
   margin: 0;
@@ -47,4 +48,34 @@ ul {
 
 li {
   color: #FFF;
+}
+
+hr {
+  display: none;
+  border: 0.5px solid #FFF;
+  background-color: #FFF;
+  opacity: .5;
+}
+
+.clearContainer {
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.removeButton {
+  margin-right: 8px;
+}
+
+.checkBoxContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.checkBox {
+  margin-right: 12px;
 }
