@@ -45,8 +45,9 @@ export class InputsComponent implements OnInit {
     }
   }
 
-  setCheck(li: HTMLLIElement) {
-    if (this.check === false) {
+  lineThrough(li: HTMLLIElement, e: Event) {
+    const target = event?.target as HTMLInputElement
+    if (target.checked) {
       li.style.textDecoration = 'line-through'
     } else {
       li.style.textDecoration = 'none'
@@ -57,7 +58,9 @@ export class InputsComponent implements OnInit {
 
   }
 
+
   ngOnInit(): void {
+
   }
 
 }

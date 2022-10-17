@@ -13,30 +13,35 @@
     <input type="text" value="Limpar a casa" id="tarefa" placeholder="Add your new todo" #task required>
     <hr #hr />
 
-    <ul *ngFor="let item of list">
-      <div class="checkBoxContainer">
-        <mat-checkbox [(ngModel)]="check" name="checkbox" class="checkBox" (click)="setCheck(li)"></mat-checkbox >
-        <li #li>{{ item.name }}</li>
-      </div>
+    <div class="ulContainer">
+      <ul *ngFor="let item of list">
+        <div class="checkBoxContainer">
+          <input type="checkbox"
+            name="checkbox"
+            class="checkBoxInput"
+            (change)="lineThrough(li, $event)">
+          <li #li>{{ item.name }}</li>
+        </div>
 
-      <div class="buttonsContainer">
-        <button (click)="removeTask(hr, item.id)" mat-mini-fab color="warn" class="removeButton">
-          <mat-icon>delete</mat-icon>
-        </button>
+        <div class="buttonsContainer">
+          <button (click)="editTask()" mat-mini-fab color="success" class="editButton">
+            <mat-icon class="editButton">edit</mat-icon>
+          </button>
 
-        <button (click)="editTask()" mat-mini-fab color="success" class="editButton">
-          <mat-icon class="editButton">edit</mat-icon>
-        </button>
-      </div>
+          <button (click)="removeTask(hr, item.id)" mat-mini-fab color="warn" class="removeButton">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </ul>
 
-    </ul>
+    </div>
 
     <div class="clearContainer" #clear>
       <div class="clearLabel">
         <label #label for="">Você tem {{ this.list.length }} tarefa(s) pendente</label>
       </div>
       <div class="clearButton">
-        <button mat-button (click)="clearTasks(hr)">Limpar</button>
+        <button mat-button (click)="clearTasks(hr)">Limpar tudo</button>
       </div>
     </div>
 
