@@ -5,7 +5,7 @@
         <label for="">Tarefas</label>
       </div>
       <div class="inputAdd">
-        <button mat-button (click)="add(hr, task)">
+        <button class="btn" mat-button (click)="add(hr, task)">
           <mat-icon>add</mat-icon>
         </button>
       </div>
@@ -24,7 +24,7 @@
         </div>
 
         <div class="buttonsContainer">
-          <button (click)="editTask()" mat-mini-fab color="success" class="editButton">
+          <button (click)="editTask($event, li, task)" mat-mini-fab color="success" class="editButton">
             <mat-icon class="editButton">edit</mat-icon>
           </button>
 

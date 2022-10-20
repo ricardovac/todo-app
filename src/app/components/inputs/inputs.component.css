@@ -104,7 +104,8 @@ hr {
   appearance: none;
   outline: 0;
   cursor: pointer;
-  transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);;
+  transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+  ;
   margin-right: 8px;
 }
 

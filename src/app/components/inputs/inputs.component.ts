@@ -54,10 +54,17 @@ export class InputsComponent implements OnInit {
     }
   }
 
-  editTask() {
+  editTask(event: Event, li: HTMLLIElement, task: HTMLInputElement) {
+    let stockValues = Object.values(this.list)
+    stockValues.forEach(function (name, index) {
+      stockValues[0] = task.value
+      li.innerText = ''
+      li.append(stockValues[0])
 
-  }
-
+      console.log(stockValues[0])
+      return stockValues
+    })
+  };
 
   ngOnInit(): void {
 
